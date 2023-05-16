@@ -41,6 +41,9 @@ class RegisteredUserController extends Controller
             [
                 'name' => $request->name,
                 'email' => $request->email,
+                'address' => $request->address,
+                'phone' => $request->phone,
+                'visible' => $request->visible,
                 'password' => Hash::make($request->password),
             ],
         )->givePermissionTo('ponto_coleta');
@@ -52,7 +55,7 @@ class RegisteredUserController extends Controller
         Auth::login($user);
 
         $sheetdb = new SheetDB('5nql68xhnf7ee');
-        $sheetdb->create(['NOME' => $request->name, 'ENDEREÇO' => $request->endereco]);
+        $sheetdb->create(['NOME' => $request->name, 'ENDEREÇO' => $request->address, 'TELEFONE' => $request->phone]);
 
         return redirect(RouteServiceProvider::HOME);
     }

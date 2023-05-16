@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ManageViewMapController;
 use App\Http\Controllers\MaterialController;
 use App\Http\Controllers\SheetdbController;
 use App\Http\Controllers\ProfileController;
@@ -25,6 +26,8 @@ Route::get('/mapas', function () {
 });
 
 Route::resource('materiais', MaterialController::class)->middleware(['auth', 'verified']);
+
+Route::resource('manageMaps', ManageViewMapController::class)->middleware(['auth', 'verified']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

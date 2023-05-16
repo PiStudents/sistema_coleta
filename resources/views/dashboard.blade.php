@@ -5,18 +5,20 @@
         </h2>
     </x-slot>
 
-    @can('ponto_coleta')
+    @can('admin')
     <div class="py-12">
+
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+            <div class="bg-black overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
-                    {{ __("You're logged in!") }}
+                    <a class="btn btn-success" href="{{ route('manageMaps.index') }}"> Usuários Visíveis no Mapa</a>
+                    <a class="btn btn-success" href="{{ route('materiais.index') }}"> Lista de Materiais</a>
                 </div>
             </div>
         </div>
         @endcan
 
-        @can('admin')
+        @can('ponto_coleta')
         <section class="text-black-400 bg-white-600 body-font">
             <div class="container px-5 py-24 mx-auto">
                 <div class="flex flex-wrap">

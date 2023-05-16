@@ -27,15 +27,15 @@
 
         <!-- Endereço -->
         <div class="mt-4">
-            <x-input-label for="endereco" :value="__('Endereço')" />
-            <x-text-input id="endereco" class="block mt-1 w-full" type="text" name="endereco" :value="old('endereco')" placeholder="R. Polidoro Simões, 533, Paraguaçu Paulista - SP" required autocomplete="endereco" />
-            <x-input-error :messages="$errors->get('endereco')" class="mt-2" />
+            <x-input-label for="address" :value="__('Endereço')" />
+            <x-text-input id="address" class="block mt-1 w-full" type="text" name="address" :value="old('address')" placeholder="R. Polidoro Simões, 533, Paraguaçu Paulista - SP" required autocomplete="address" />
+            <x-input-error :messages="$errors->get('address')" class="mt-2" />
         </div>
 
         <!-- Telefone -->
         <div class="mt-4">
-            <x-input-label for="telefone" :value="__('Telefone')" />
-            <x-text-input id="telefone" class="block mt-1 w-full" type="tel" name="telefone" :value="old('telefone')" maxlength="15" onkeyup="handlePhone(event)" required autocomplete="telefone" />
+            <x-input-label for="phone" :value="__('Telefone')" />
+            <x-text-input id="phone" class="block mt-1 w-full" type="tel" name="phone" :value="old('phone')" maxlength="15" onkeyup="handlePhone(event)" required autocomplete="phone" />
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
 
@@ -48,6 +48,13 @@
                 <x-input-error :messages="$errors->get('user_type')" class="mt-2" />
             </select>
         </div> -->
+
+        <!-- Visibilidade -->
+        <div class="hidden">
+            <x-input-label for="visible" :value="__('Visível')" />
+            <x-text-input id="visible" class="block mt-1 w-full" type="text" name="visible" value="false" />
+            <x-input-error :messages="$errors->get('visible')" class="mt-2" />
+        </div>
 
         <!-- Password -->
         <div class="mt-4">
